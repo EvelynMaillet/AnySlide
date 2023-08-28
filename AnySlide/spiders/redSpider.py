@@ -1,5 +1,6 @@
 import scrapy
 import webbrowser
+import time
 
 
 class RedspiderSpider(scrapy.Spider):
@@ -8,6 +9,7 @@ class RedspiderSpider(scrapy.Spider):
     start_urls = ["https://www.reddit.com/r/Art/"]
 
     def parse(self, response):
-        images = response.css("img").xpath("@src").getall()
-        webbrowser.open(images[0])
+        images = list(set(response.css("img").xpath("@src").getall()))
+        print(images)
+        webbrowser.open(images[2])
         pass

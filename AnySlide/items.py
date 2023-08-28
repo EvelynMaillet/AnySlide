@@ -6,7 +6,8 @@
 import scrapy
 
 
-class AnyslideItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+class imageItem(scrapy.Item):
+    name = scrapy.Field()
+    hyperlink = scrapy.Field()
+    pageFound = scrapy.Field()
     pass
